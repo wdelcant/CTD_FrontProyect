@@ -8,8 +8,9 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://visualstudioservice.duckdns.org:8000',
+        target: 'https://visualstudioservice.duckdns.org:8000',
         changeOrigin: true,
+        secure: true, // Asegura que el proxy use HTTPS
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
